@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI with Xray (cloud and server/DC)
+name: CI with Xray (cloud)
 
 # Controls when the action will run. 
 on:
@@ -39,7 +39,7 @@ jobs:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
       - name: "Import results to Xray (cloud) using maven plugin"
         #if: ${{ false }}
-        run: mvn -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml app.getxray:xray-maven-plugin:import-results -Dxray.cloud=true -Dxray.clientId=${{ secrets.XRAYCLOUD_CLIENT_ID }} -Dxray.clientSecret=${{ secrets.XRAYCLOUD_CLIENT_SECRET }} -Dxray.projectKey=${{ secrets.JIRACLOUD_PROJECT_KEY }} -Dxray.testPlanKey=${{ secrets.XRAYCLOUD_TEST_PLAN_KEY }}
+        run: mvn -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml app.getxray:xray-maven-plugin:import-results -Dxray.cloud=true -Dxray.clientId=${{ secrets.XRAYCLOUD_CLIENT_ID }} -Dxray.clientSecret=${{ secrets.XRAYCLOUD_CLIENT_SECRET }} -Dxray.projectKey=${{ secrets.JIRACLOUD_PROJECT_KEY }}
         env:
           GH_USERNAME: ${{ secrets.GH_USERNAME }}
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
