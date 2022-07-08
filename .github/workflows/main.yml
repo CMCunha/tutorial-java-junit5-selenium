@@ -52,4 +52,5 @@ jobs:
            xrayCloud: "true"
            testFormat: "junit"
            testPaths: "**/reports/*.xml"
+           testPlanKey: "${{ secrets.XRAYCLOUD_TEST_PLAN_KEY }}"
            projectKey: "${{ secrets.JIRACLOUD_PROJECT_KEY }}"
