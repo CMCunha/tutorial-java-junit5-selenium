@@ -38,7 +38,7 @@ jobs:
           GH_USERNAME: ${{ secrets.GH_USERNAME }}
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
       - name: debug JUnit XML report
-        if: ${{ false }}
+        #if: ${{ false }}
         run: cat reports/TEST-junit-jupiter.xml
       - name: "Import results to Xray (cloud) using maven plugin"
         if: ${{ false }}
