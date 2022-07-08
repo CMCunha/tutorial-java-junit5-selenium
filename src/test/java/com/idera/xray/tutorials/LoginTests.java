@@ -32,6 +32,7 @@ public class LoginTests {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model, to run in Docker
         options.addArguments("--headless");
+        System.setProperty("webdriver.chrome.driver", "../../../../../../Downloads/chromedriver 2");
         driver = new ChromeDriver(options);
         repo = new RepositoryParser("./src/configs/object.properties");
     }
@@ -44,8 +45,8 @@ public class LoginTests {
     }
     
     @Test
-    @XrayTest(key = "XT-307")
-    @Requirement("XT-10")
+    @XrayTest(key = "EWB-273")
+    @Requirement("EWB-270")
     public void successLogin()
     {
         LoginPage loginPage = new LoginPage(driver).open();
@@ -56,7 +57,8 @@ public class LoginTests {
     }
 
     @Test
-    @XrayTest(summary = "invalid login test", description = "login attempt with invalid credentials")
+    @XrayTest(summary = "invalid login test", description = "login attempt with invalid credentials", key = "EWB-274")
+    @Requirement("EWB-270")
     public void nosuccessLogin(XrayTestReporter xrayReporter)
     {
         LoginPage loginPage = new LoginPage(driver).open();
