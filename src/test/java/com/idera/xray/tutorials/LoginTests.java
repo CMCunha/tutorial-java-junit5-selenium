@@ -32,7 +32,7 @@ public class LoginTests {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model, to run in Docker
         options.addArguments("--headless");
-        System.setProperty("webdriver.chrome.driver", "../../../../../../Downloads/chromedriver 2");
+        //System.setProperty("webdriver.chrome.driver", "../../../../../../Downloads/chromedriver 2");
         driver = new ChromeDriver(options);
         repo = new RepositoryParser("./src/configs/object.properties");
     }
